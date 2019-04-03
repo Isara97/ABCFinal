@@ -1,0 +1,1 @@
+if you miss .htaacess you can't fetch data in admint student or input
