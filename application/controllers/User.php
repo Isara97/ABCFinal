@@ -21,7 +21,7 @@ class User extends CI_Controller{
 
 
     public function profile(){
-        $this->load->view('profile');
+        $this->load->view('StudentProfile');
     }
 
     public  function logout(){
@@ -38,20 +38,6 @@ class User extends CI_Controller{
         $this->output->set_header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
     }
 
-    /*
-    function fetch_me()
-    {
-        $output = array();
-        $this->load->model("profile_modle");
-        $data = $this->profile_modle->fetch_Me_Data($_POST["user_id"]);
-        foreach($data as $row)
-        {
-            $output['name'] = $row->name;
-            $output['marks'] = $row->marks;
-
-        }
-        echo json_encode($output);
-    }*/
 
 
 }

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Admin</title>
+    <title>Admin-Services</title>
     <!-- Main Css for Admin -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/CustomCss/admin.css">
     <!-- Booststrap css-->
@@ -73,7 +73,7 @@
                 <ul>
                     <li><a href="<?php echo base_url();?>Stuadmin_controller/index"><span class="fa fa-plus"></span> Add</a></li>
                     <li><a href="<?php echo base_url();?>Services/index"><span class="fa fa-edit"></span> Student Services</a></li>
-                    <li><a href="<?php echo base_url();?>"><span class="fa fa-remove"></span> Delete</a></li>
+                    <li><a href="<?php echo base_url();?>MarksAdmin/index"><span class="fa fa-remove"></span> Delete</a></li>
                 </ul>
             </li>
             <li><a href="#"><span class="fa fa-user-secret"></span> Lecturers</a>

@@ -91,7 +91,7 @@ ul.address {
     max-width:400px;
     margin:0 auto;
     padding:2em;
-    
+
 	}
 .profile-pic {
     text-align: center;
@@ -106,7 +106,7 @@ ul.address {
     -webkit-transition: 0.5s all;
     -moz-transition: 0.5s all;
     -o-transition: 0.5s all;
-		
+
 }
 .profile-pic h2 {
     font-size: 2em;
@@ -117,7 +117,7 @@ ul.address {
     font-size: 1em;
     color:#000;
 	font-style:italic;
-	
+
 }
 .profile-ser-grids1  {
     float: left;
@@ -303,10 +303,10 @@ i.fab.fa-google-plus-g:hover{
 }
 /*-- w3layouts --*/
 .copy-rights p a{
-  color:#000; 
+  color:#000;
 }
 .copy-rights p a:hover{
-  color: #fff; 
+  color: #fff;
 }
 .clear{
 	clear:both;
@@ -342,7 +342,7 @@ i.fab.fa-google-plus-g:hover{
  /** Responsive **/
 @media screen and (max-width: 480px){
 .footer-w3 p {
-    font-size: 14px;  
+    font-size: 14px;
 }
 .profile-main {
     margin: 0 3vw;
@@ -364,8 +364,8 @@ span.w3 {
 }
 .follow i {
     margin-right: 7px;
-}	
-} 
+}
+}
 @media screen and (max-width: 384px){
 .w3ls_about_guage {
     float: left;
@@ -374,7 +374,7 @@ span.w3 {
 span.w3 {
     margin-left: 2px;
     font-style: italic;
-}	
+}
 }
 @media screen and (max-width: 320px){
 .w3ls_banner_info h1 {
@@ -391,6 +391,35 @@ span.w3 {
 }
 .profile-follows {
     padding: 0;
-}	
-} 
+}
+}
  /** /Responsive **/
+
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 25%;
+	background-color: #f1f1f1;
+	position: fixed;
+	height: 100%;
+	overflow: auto;
+}
+
+li a {
+	display: block;
+	color: #000;
+	padding: 8px 16px;
+	text-decoration: none;
+}
+
+li a.active {
+	background-color: #4CAF50;
+	color: white;
+}
+
+li a:hover:not(.active) {
+	background-color: #555;
+	color: white;
+}

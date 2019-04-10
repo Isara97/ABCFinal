@@ -421,28 +421,28 @@
         }
     }
 
-    $(document).ready(function() {
-        var user_id = $(this).attr("id");
-        $.ajax({
-            url: "<?php echo base_url(); ?>Stuadmin_controller/fetch_singleuser",
-            method: "POST",
-            data: {user_id: user_id},
-            dataType: "json",
-            success: function (data) {
-                $('#username').val(data.username);
-                $('#first_name').val(data.first_name);
-                $('#last_name').val(data.last_name);
-                $('#password').val(data.password);
-                $('#email').val(data.email);
-                $('#address').val(data.address);
-                $('#gender').val(data.gender);
-                $('#phone').val(data.phone);
-                $('#user_id').val(user_id);
-                $('#user_uploaded_image').html(data.user_image);
-                $('#action').val("Update");
-            }
-        });
-    });
+	$(document).ready(function() {
+		var user_id = $(this).attr("id");
+		$.ajax({
+			url: "<?php echo base_url(); ?>Stuadmin_controller/fetch_singleuser",
+			method: "POST",
+			data: {user_id: user_id},
+			dataType: "json",
+			success: function (data) {
+				$('#username').val(data.username);
+				$('#first_name').val(data.first_name);
+				$('#last_name').val(data.last_name);
+				$('#password').val(data.password);
+				$('#email').val(data.email);
+				$('#address').val(data.address);
+				$('#gender').val(data.gender);
+				$('#phone').val(data.phone);
+				$('#user_id').val(user_id);
+				$('#user_uploaded_image').html(data.user_image);
+				$('#action').val("Update");
+			}
+		});
+	});
 
 </script>
 <script type="text/javascript">
