@@ -73,7 +73,7 @@
                 <ul>
                     <li><a href="<?php echo base_url();?>Stuadmin_controller/index"><span class="fa fa-plus"></span> Add</a></li>
                     <li><a href="<?php echo base_url();?>Services/index"><span class="fa fa-edit"></span> Student Services</a></li>
-                    <li><a href="<?php echo base_url();?>MarksAdmin/index"><span class="fa fa-remove"></span> Delete</a></li>
+                    <li><a href="<?php echo base_url();?>Anew/marksIndex"><span class="fa fa-stream"></span> Delete</a></li>
                 </ul>
             </li>
             <li><a href="#"><span class="fa fa-user-secret"></span> Lecturers</a>
@@ -107,7 +107,7 @@
 <section style="float: left;margin-top: 20px;margin-left: 40px">
     <div class="container-fluid">
         <h2>Student Services Forums</h2>
-    <table class="table table-bordered table-responsive text-center" style="width: 800px;padding:20px 20px 20px 20px;float: left">
+    <table class="table table-responsive text-center" style="width: 800px;padding:20px 20px 20px 20px;float: left">
         <thead>
         <tr>
             <td>ID</td>

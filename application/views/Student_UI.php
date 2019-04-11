@@ -445,31 +445,6 @@
 	});
 
 </script>
-<script type="text/javascript">
-    function noBack()
-    {
-        window.history.forward()
-    }
-    noBack();
-    window.onload = noBack;
-    window.onpageshow = function(evt) { if (evt.persisted) noBack() }
-    window.onunload = function() { void (0) }
-</script>
-<script>
-    var coll = document.getElementsByClassName("collapsible");
-    var i;
 
-    for (i = 0; i < coll.length; i++) {
-        coll[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var content = this.nextElementSibling;
-            if (content.style.display === "block") {
-                content.style.display = "none";
-            } else {
-                content.style.display = "block";
-            }
-        });
-    }
-</script>
 </body>
 </html>
