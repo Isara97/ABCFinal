@@ -339,11 +339,11 @@
             </div>
         </div>
         <div class="card">
-            <h4><i class="fa fa-file-text"></i> Private Files Folder</h4>
-            <div class="fileUp" style="padding-top: 30px;padding-bottom: 30px;padding-left: 10px;background-color: #28B463;color: white">
-                <p>No file Uploaded</p>
-            </div>
-        </div>
+			<div class="myFiles" style="padding: 8px 8px 86px 32px;background-color: #3b5998;color: whitesmoke">
+            	<h4><i class="fa fa-file-text"></i> Private Files Folder</h4>
+				<a href="<?php echo base_url()?>upload/index" style="text-decoration: none;padding: 8px 140px 66px 4px;background-color: #6dd5ed"><i class="fa fa-file-alt"></i>  File Upload</a>
+			</div>
+			</div>
     </div>
 </div>
 
@@ -430,6 +430,7 @@
 			dataType: "json",
 			success: function (data) {
 				$('#username').val(data.username);
+				$('#role').val(data.username);
 				$('#first_name').val(data.first_name);
 				$('#last_name').val(data.last_name);
 				$('#password').val(data.password);
@@ -445,6 +446,5 @@
 	});
 
 </script>
-
 </body>
 </html>

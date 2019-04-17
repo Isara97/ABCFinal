@@ -31,21 +31,30 @@ class Auth extends CI_Controller {
             //if user exists
             if ($user->email){
                 //temporary message
-                $this->session->set_flashdata('success', "You are Logged in");
-                //set session variables
-                $_SESSION['user_logged']=TRUE;
-                $_SESSION['username'] = $user->username;
-                $_SESSION['email'] = $user->email;
-                $_SESSION['address'] = $user->address;
-                $_SESSION['first_name'] = $user->first_name;
-                $_SESSION['last_name'] = $user->last_name;
-                $_SESSION['phone'] = $user->phone;
-                $_SESSION['gender'] = $user->gender;
-                $_SESSION['image'] = $user->image;
+				if($user->role == 'student') {
 
 
-                //redirect to profile page
-                redirect("Home/homeIndex","refresh");
+					$this->session->set_flashdata('success', "You are Logged in");
+					//set session variables
+					$_SESSION['user_logged'] = TRUE;
+					$_SESSION['id'] = $user->id;
+					$_SESSION['username'] = $user->username;
+					$_SESSION['role'] = $user->role;
+					$_SESSION['email'] = $user->email;
+					$_SESSION['address'] = $user->address;
+					$_SESSION['first_name'] = $user->first_name;
+					$_SESSION['last_name'] = $user->last_name;
+					$_SESSION['phone'] = $user->phone;
+					$_SESSION['gender'] = $user->gender;
+					$_SESSION['image'] = $user->image;
+
+
+					//redirect to profile page
+					redirect("Home/homeIndex", "refresh");
+				}
+				else{
+					redirect("auth/login","refresh");
+				}
             }else{
                 $this->session->set_flashdata("error","No such account exists in database...!!");
                 redirect("auth/login","refresh");
