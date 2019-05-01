@@ -767,6 +767,6 @@
     </div>
 </section>
 
-<1----Footer end ----->
+<!----Footer end ----->
 </body>
 </html>

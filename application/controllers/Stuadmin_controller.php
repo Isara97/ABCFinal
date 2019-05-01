@@ -2,6 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Stuadmin_controller extends CI_Controller {
     //functions
+
     function index(){
         $data["title"] = "ABC Admin - Students Details";
         $this->load->view('Stuadmin_view', $data);
@@ -13,7 +14,7 @@ class Stuadmin_controller extends CI_Controller {
         foreach($fetch_data as $row)
         {
             $sub_array = array();
-            $sub_array[] = '<img src="'.base_url().'./upload'.$row->image.'" class="img-thumbnail" width="50" height="35" />';
+            $sub_array[] = '<img src="'.base_url().'./upload'.$row->image.'" class="img-thumbnail" width="120" height="90" />';
             $sub_array[] = $row->username;
             $sub_array[] = $row->first_name;
             $sub_array[] = $row->last_name;
@@ -22,8 +23,8 @@ class Stuadmin_controller extends CI_Controller {
             $sub_array[] = $row->address;
             $sub_array[] = $row->gender;
             $sub_array[] = $row->phone;
-            $sub_array[] = '<button type="button" name="update" id="'.$row->id.'" class="btn btn-warning btn-xs update">Update</button>';
-            $sub_array[] = '<button type="button" name="delete" id="'.$row->id.'" class="btn btn-danger btn-xs delete">Delete</button>';
+            $sub_array[] = '<button type="button" name="update" id="'.$row->id.'" class="btn btn-warning btn-xs update" style=" width: 100%;height: 100%">Update</button>';
+            $sub_array[] = '<button type="button" name="delete" id="'.$row->id.'" class="btn btn-danger btn-xs delete" style=" width: 100%;height: 100%">Delete</button>';
             $data[] = $sub_array;
         }
         $output = array(
@@ -34,7 +35,11 @@ class Stuadmin_controller extends CI_Controller {
         );
         echo json_encode($output);
     }
-    function user_action(){
+
+	/**
+	 *
+	 */
+	function user_action(){
         if(!$_POST["action"] == "Add")
         {
             $insert_data = array(
@@ -46,15 +51,16 @@ class Stuadmin_controller extends CI_Controller {
                 'address'          =>     $this->input->post('address'),
                 'gender'          =>     $this->input->post('gender'),
                 'phone'          =>     $this->input->post('phone'),
+                'role'			=>  'student',
                 'image'                    =>     $this->upload_image()
             );
             $this->load->model('Stuadmin_model');
             $this->Stuadmin_model->insert_crud($insert_data);
             echo 'Data Inserted';
         }
-        if($_POST["action"] == "update")
+        if(!$_POST["action"] == "Edit")
 		{
-			$user_image = '';
+			/*$user_image = '';
 			if($_FILES["user_image"]["name"] != '')
 			{
 				$user_image = $this->upload_image();
@@ -62,7 +68,8 @@ class Stuadmin_controller extends CI_Controller {
 			else
 			{
 				$user_image = $this->input->post("hidden_user_image");
-			}
+			}*/
+
 			$updated_data = array(
 				'username'          =>     $this->input->post('username'),
 				'first_name'          =>     $this->input->post('first_name'),
@@ -72,10 +79,17 @@ class Stuadmin_controller extends CI_Controller {
 				'address'          =>     $this->input->post('address'),
 				'gender'          =>     $this->input->post('gender'),
 				'phone'          =>     $this->input->post('phone'),
-				'image'                    =>     $user_image
+				'role'			=>  'student',
+				'image'			=> 		$this->input->post("hidden_user_image")
+
 			);
+
+
+
+
 			$this->load->model('Stuadmin_model');
-			$this->Stuadmin_model->update_crud($this->input->post("user_id"), $updated_data);
+			$this->Stuadmin_model->update_crud($this->input->post('user_id'), $updated_data);
+			$this->Stuadmin_model->delete_single_user($_POST["user_id"]);
 			echo 'Data Updated';
 		}
 	}
@@ -85,8 +99,8 @@ class Stuadmin_controller extends CI_Controller {
         {
             $extension = explode('.', $_FILES['user_image']['name']);
             $new_name = rand() . '.' . $extension[1];
-            $destination = './upload' . $new_name;
-            move_uploaded_file($_FILES['user_image']['tmp_name'], $destination);
+			$destination = './upload' . $new_name;
+			move_uploaded_file($_FILES['user_image']['tmp_name'], $destination);
             return $new_name;
         }
     }
@@ -110,7 +124,7 @@ class Stuadmin_controller extends CI_Controller {
             if($row->image != '')
             {
                 $output['user_image'] = '<img src="'.base_url().'./upload'.$row->
-                    image.'" class="img-thumbnail" width="50" height="35" /><input type="hidden" name="hidden_user_image" value="'.$row->image.'" />';
+                    image.'" class="img-thumbnail" width="120" height="300" /><input type="hidden" name="hidden_user_image" value="'.$row->image.'" />';
             }
             else
             {

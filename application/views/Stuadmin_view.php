@@ -200,7 +200,7 @@
                 <ul>
 					<li><a href="<?php echo base_url();?>Stuadmin_controller/index"><span class="fa fa-plus"></span> Add</a></li>
 					<li><a href="<?php echo base_url();?>Services/index"><span class="fa fa-edit"></span> Student Services</a></li>
-					<li><a href="<?php echo base_url();?>Anew/marksIndex"><span class="fa fa-stream"></span> Uploaded Files</a></li>
+					<li><a href="<?php echo base_url();?>Anew/marksIndex"><span class="fa fa-stream"></span> Student Marks</a></li>
                 </ul>
             </li>
             <li><a href="#"><span class="fa fa-user-secret"></span> Lecturers</a>
@@ -258,7 +258,7 @@
                 <th width="8%">Address</th>
                 <th width="4%">Gender</th>
                 <th>Phone</th>
-                <th width="8%%">Edit</th>
+                <th width="8%">Edit</th>
                 <th width="8%">Delete</th>
             </tr>
             </thead>
@@ -322,10 +322,12 @@
 
                     <label>Select User Image</label>
                     <input type="file" name="user_image" id="user_image" />
-                    <span id="user_uploaded_image"></span>
+					<br>
+                    <span id="user_uploaded_image"></span>.
+					<br>
                     <div class="modal-footer">
                         <input type="hidden" name="user_id" id="user_id">
-                        <input type="submit" name="action" id="action" class="btn btn-success" value="Add"/>
+                        <input type="submit" name="action" id="action" class="btn btn-success"/>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
@@ -409,8 +411,8 @@
                     $('.modal-title').text("Update Student Details");
                     $('#user_id').val(user_id);
                     $('#user_uploaded_image').html(data.user_image);
-                    $('#action').val("Update");
-                }
+					$('#action').val("Edit");
+				}
             })
         });
 		$(document).on('click', '.delete', function(){

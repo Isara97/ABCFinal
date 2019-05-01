@@ -14,7 +14,7 @@
 
 		body {
 			margin: 0;
-			background-color: #B7950B;
+			background-color: #85929E;
 		}
 
 		/* Style the header */
@@ -127,7 +127,7 @@
 			padding-top: 8%;
 			padding-left: 30%;
 			padding-bottom: 40%;
-			background-color: #154360;
+			background-color: #212F3C;
 			color: whitesmoke;
 		}
 	</style>
@@ -150,7 +150,6 @@
 					<button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen"><i class="fa fa-info-circle"></i> Profile Details</button>
 					<button class="tablinks" onclick="openCity(event, 'Paris')"><i class="fas fa-stream"></i> Student Marks & GPA</button>
 					<button class="tablinks" onclick="openCity(event, 'Tokyo')"><i class="fas fa-user-cog"></i> profile Settings</button>
-					<button class="tablinks" onclick="openCity(event, 'Colombo')"><i class="fas fa-user-cog"></i> Uploaded Files</button>
 				</div>
 		</div>
 	</div>
@@ -165,7 +164,6 @@
 			<h3 style="float: right;text-align: center;padding-right: 120px;text-transform: uppercase;font-family: 'Times New Roman';font-size: 30px"> <span><?php echo $_SESSION['first_name'];  ?></span><span> <?php echo $_SESSION['last_name'];  ?></span> </h3>
 			<div class="procontent">
 				<div class="row">
-					<input type="hidden" name="id" value="<?php echo $_SESSION['id']; ?>">
 					<span style="font-size: 20px;text-transform: capitalize"><b>Name : </b><?php echo $_SESSION['first_name'];  ?></span><span style="font-size: 20px;text-transform: capitalize"> <?php echo $_SESSION['last_name'];  ?></span>
 				</div><br>
 				<div class="row">
@@ -189,8 +187,7 @@
 
 			<div class="form-group">
 				<div class="input-group">
-						<input type="text" name="search_text" id="search_text"  class="form-control" value="<?php echo $_SESSION['username'];  ?>" /><br /><br />
-						<span><button class="btn-warning btn-lg" id="search_text" name="search_text">Generate</button></span>
+						<input type="hidden" name="search_text" id="search_text" class="form-control" value="<?php echo $_SESSION['username'];  ?>" /><br /><br />
 				</div>
 			</div>
 			<br />
@@ -212,7 +209,7 @@
 					})
 				}
 
-				$('#search_text').keyup(function(){
+				$('#search_text').val(function(){
 					var search = $(this).val();
 					if(search != '')
 					{
@@ -232,8 +229,7 @@
 				<div class="row">
 					<div class="col-md-6">
 						<label for="username">User Name</label>
-						<input type="hidden" name="id" value="<?php echo $_SESSION['id']; ?>">
-						<input type="text" name="username" id="username" class="form-control">
+						<input type="text" name="username" id="username" class="form-control" value="<?php echo $_SESSION['email']?>">
 					</div>
 					<div class="col-md-6">
 						<label for="first_name">First Name</label>
@@ -248,7 +244,7 @@
 				<div class="row">
 					<div class="col-md-6">
 						<label for="password">Password</label>
-						<input type="text" name="password" id="password" class="form-control">
+						<input type="password" name="password" id="password" class="form-control">
 					</div>
 
 					<div class="col-md-6">
@@ -285,14 +281,10 @@
 				<input type="submit" name="action" id="action" class="btn" value="Add" style="padding: 15px 15px 15px 15px;background-color: #239B56;color: whitesmoke"/>
 			</form>
 		</div>
-		<div id="Colombo" class="tabcontent" style="padding-left: 20px">
-
-		</div>
 	</div>
 
 	<div class="column side">
-		<h2>Side</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+
 	</div>
 
 </div>

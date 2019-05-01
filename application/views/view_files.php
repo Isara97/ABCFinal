@@ -117,7 +117,7 @@
                 <embed src="<?php echo base_url('upload/'.$file['file_name']); ?>" width="100%" height="180"/>
                 <div class="btn-group btn-group-justified" role="group">
                     <a href="<?php echo site_url('download/index/'.$file['id']) ?>" class="btn btn-success">Download</a>
-                    <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#my-<?php echo $file['id'] ?>">View</a>
+                    <a href="<?php echo base_url('upload/'.$file['file_name']); ?>" class="btn btn-danger" data-toggle="modal" data-target="#my-<?php echo $file['id'] ?>">View</a>
                 </div>
                 <div class="modal fade" id="my-<?php echo $file['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="label-<?php echo $file['id'] ?>">
                     <div class="modal-dialog" role="document">
