@@ -244,12 +244,12 @@
 				<div class="row">
 					<div class="col-md-6">
 						<label for="password">Password</label>
-						<input type="password" name="password" id="password" class="form-control">
+						<input type="password" name="password" id="password" class="form-control" value="<?php echo $_SESSION['password']?>">
 					</div>
 
 					<div class="col-md-6">
 						<label for="password">Confirm Password</label>
-						<input type="text" name="password2" id="password" class="form-control">
+						<input type="password" name="password2" id="password" class="form-control" value="<?php echo $_SESSION['password']?>">
 					</div>
 				</div>
 

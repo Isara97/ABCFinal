@@ -205,8 +205,8 @@
             </li>
             <li><a href="#"><span class="fa fa-user-secret"></span> Lecturers</a>
                 <ul>
-                    <li><a href="#"><span class="fa fa-plus"></span> Add</a></li>
-                    <li><a href="#"><span class="fa fa-edit"></span> Edit</a></li>
+					<li><a href="<?php echo base_url();?>AddLectures/add"><span class="fa fa-plus"></span> Add Lecturers</a></li>
+					<li><a href="<?php echo base_url();?>AddLectures/index"><span class="fa fa-edit"></span> Lecturers Management</a></li>
                     <li><a href="#"><span class="fa fa-remove"></span> Delete</a></li>
                 </ul>
             </li>

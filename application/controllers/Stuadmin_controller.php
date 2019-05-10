@@ -23,8 +23,8 @@ class Stuadmin_controller extends CI_Controller {
             $sub_array[] = $row->address;
             $sub_array[] = $row->gender;
             $sub_array[] = $row->phone;
-            $sub_array[] = '<button type="button" name="update" id="'.$row->id.'" class="btn btn-warning btn-xs update" style=" width: 100%;height: 100%">Update</button>';
-            $sub_array[] = '<button type="button" name="delete" id="'.$row->id.'" class="btn btn-danger btn-xs delete" style=" width: 100%;height: 100%">Delete</button>';
+            $sub_array[] = '<button type="button" name="update" id="'.$row->id.'" class="btn btn-warning btn-xs update" style=" width: 100%;height: 30px">Update</button>';
+            $sub_array[] = '<button type="button" name="delete" id="'.$row->id.'" class="btn btn-danger btn-xs delete" style=" width: 100%;height: 30px">Delete</button>';
             $data[] = $sub_array;
         }
         $output = array(

@@ -44,6 +44,7 @@ class Auth extends CI_Controller {
 					$_SESSION['first_name'] = $user->first_name;
 					$_SESSION['last_name'] = $user->last_name;
 					$_SESSION['phone'] = $user->phone;
+					$_SESSION['password'] = $user->password;
 					$_SESSION['gender'] = $user->gender;
 					$_SESSION['image'] = $user->image;
 
